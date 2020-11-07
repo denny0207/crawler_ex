@@ -118,7 +118,7 @@ def main():
 
 if __name__ == "__main__":
     logger.info('Started..')
-    #main()
+    main()
     logger.info("Finished!\n")
     
 
