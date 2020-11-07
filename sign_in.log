@@ -1,0 +1,10 @@
+2020-11-07 23:42:35 - INFO - 122 - Started..
+2020-11-07 23:42:35 - INFO - 124 - Finished!
+
+2020-11-08 00:07:01 - DEBUG - 959 - Starting new HTTPS connection (1): ld246.com:443
+2020-11-08 00:07:01 - DEBUG - 437 - https://ld246.com:443 "POST /login HTTP/1.1" 200 None
+2020-11-08 00:07:01 - DEBUG - 437 - https://ld246.com:443 "GET /activity/daily-checkin HTTP/1.1" 302 None
+2020-11-08 00:07:02 - DEBUG - 437 - https://ld246.com:443 "GET /activity/checkin HTTP/1.1" 200 None
+2020-11-08 00:07:02 - DEBUG - 437 - https://ld246.com:443 "GET /activity/daily-checkin?token=K7KQjAEwgiZ7 HTTP/1.1" 302 None
+2020-11-08 00:07:02 - DEBUG - 437 - https://ld246.com:443 "GET /activity/checkin HTTP/1.1" 200 None
+2020-11-08 00:07:03 - INFO - 124 - Finished!
