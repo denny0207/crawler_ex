@@ -9,8 +9,7 @@ logging.basicConfig(filename='sign_in.log', level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(lineno)d - %(message)s')
 logger = logging.getLogger(__name__)
 
-ppath = os.path.dirname(__file__)
-print(ppath)
+ppath = os.path.dirname(os.path.realpath('__file__'))
 os.chdir(ppath)
 
 # 保存 cookie
@@ -19,10 +18,10 @@ session = requests.Session()
 
 # 登录
 def login_hacpai():
-    login_url = 'https://hacpai.com/login'
+    login_url = 'https://ld246.com/login'
 
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36', 
-               'Referer':'https://hacpai.com/login'}
+               'Referer':'https://ld246.com/login'}
 
     raw_data = {"captcha":""}
 
@@ -56,9 +55,9 @@ def login_hacpai():
 
 # 获取签到链接
 def get_url():
-    url = 'https://hacpai.com/activity/daily-checkin'
+    url = 'https://ld246.com/activity/daily-checkin'
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
-               'Referer':'https://hacpai.com/'}
+               'Referer':'https://ld246.com/'}
     try:
         request = session.get(url, headers=headers)
         respons = request.text
@@ -79,9 +78,8 @@ def get_url():
 
 # 签到
 def sign(url):
-    # sign_in_url = 'https://hacpai.com/activity/daily-checkin'
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
-               'Referer':'https://hacpai.com/activity/checkin'}
+               'Referer':'https://ld246.com/activity/checkin'}
    
     try:
         request = session.get(url, headers=headers)
@@ -101,7 +99,7 @@ def sign(url):
     
 
 def main():
-    sign_in_url = 'https://hacpai.com/activity/checkin'
+    sign_in_url = 'https://ld246.com/activity/checkin'
     result_ls = login_hacpai()
     if result_ls[0] == 'false':
         print('登录失败!', result_ls[1], sep='\n')
